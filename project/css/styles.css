@@ -88,7 +88,7 @@ a{
     margin: 3rem;
 }
 .m-6{
-    margin: 5rem;
+    margin: 4rem;
 }
 
 .mx-0{
@@ -116,8 +116,8 @@ a{
     margin-right: 3rem;
 }
 .mx-6{
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
 }
 
 .my-0{
@@ -145,8 +145,8 @@ a{
     margin-bottom: 3rem;
 }
 .my-6{
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
 
 .mt-0{
@@ -168,7 +168,7 @@ a{
     margin-top: 3rem;
 }
 .mt-6{
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 
 .mb-0{
@@ -190,7 +190,7 @@ a{
     margin-bottom: 3rem;
 }
 .mb-6{
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }
 
 
@@ -213,7 +213,7 @@ a{
     margin-left: 3rem;
 }
 .ml-6{
-    margin-left: 5rem;
+    margin-left: 4rem;
 }
 
 .mr-0{
@@ -235,7 +235,7 @@ a{
     margin-right: 3rem;
 }
 .mr-6{
-    margin-right: 5rem;
+    margin-right: 4rem;
 }
 
 /* PADDING UTILITIES */
@@ -259,7 +259,7 @@ a{
     padding: 3rem;
 }
 .p-6{
-    padding: 5rem;
+    padding: 4rem;
 }
 
 .px-0{
@@ -287,8 +287,8 @@ a{
     padding-right: 3rem;
 }
 .px-6{
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
 .py-0{
@@ -316,8 +316,8 @@ a{
     padding-bottom: 3rem;
 }
 .py-6{
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 .p-0{
@@ -339,7 +339,7 @@ a{
     padding: 3rem;
 }
 .p-6{
-    padding: 5rem;
+    padding: 4rem;
 }
 
 .pt-0{
@@ -361,7 +361,7 @@ a{
     padding-top: 3rem;
 }
 .pt-6{
-    padding-top: 5rem;
+    padding-top: 4rem;
 }
 
 
@@ -384,7 +384,7 @@ a{
     padding-bottom: 3rem;
 }
 .pb-6{
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
 }
 
 .pl-0{
@@ -406,7 +406,7 @@ a{
     padding-left: 3rem;
 }
 .pl-6{
-    padding-left: 5rem;
+    padding-left: 4rem;
 }
 
 
@@ -429,7 +429,7 @@ a{
     padding-right: 3rem;
 }
 .pr-6{
-    padding-right: 5rem;
+    padding-right: 4rem;
 }
 
 
@@ -569,9 +569,7 @@ body{
     font-weight: 500;
     text-decoration: none;
 }
-.navbar ul li a:hover{
-    /* TODO */
-}
+
 .navbar ul li{
     list-style:none;
     padding-left: 0.75rem;
@@ -685,7 +683,7 @@ body{
 }
 .text-2xl{
     font-size: 3rem;
-    line-height: 5rem;
+    line-height: 4rem;
 }
 .text-3xl{
     font-size: 3.5rem;
@@ -1134,16 +1132,9 @@ body{
     }
 }
 
-
-
-
-/* TO DO
-containers
-img
-fonts
-container
-general margin and margin
-columns
-flex
-*/
-
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
