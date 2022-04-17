@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Landing Page</title>
+    <meta name="description" content="Proiect TW">
+    <meta name="author" content="">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&family=Rubik:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script src="../../js/main.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar bg-secondary flex content-between items-center" id="navbar">
+        <!-- to be replaced with logo -->
+        <button onclick="navOpen()" class="show-md mr-2 ml-2 menu-button"><img src="../../res/img/menu.png" class="icon invert"></button>
+        <a class="ml-1 nav-item text-white font-serif font-medium hide-md" href="../../index.html">SMART CHILDREN
+            MONITOR</a>
+        <ul class="flex m-0 content-center">
+            <li><a class="text-white font-serif font-medium" href="../front/home.html">Home</a></li>
+            <li><a class="text-white font-serif font-medium" href="../front/about.html">About</a></li>
+            <li><a class="text-white font-serif font-medium" href="../front/monitor.html">Monitor</a></li>
+            <li><a class="text-white font-serif font-medium" href="../admin/dashboard.html">Configuration</a></li>
+            <li><a class="text-white font-serif font-medium" href="../front/contact.html">Contact</a></li>
+            <li><a class="text-white font-serif font-medium show-md" href="../front/login.html">Login</a></li>
+        </ul>
+        <a class="mr-1 ml-1 nav-item font-medium text-white font-serif hide-md" href="../front/login.html">Login</a>
+    </nav>
+    <div class="flex wrap mt-5 bg-complementary">
+        <h1 class="ml-3 text-3xl font-serif text-black font-bold"> About the project</h1>
+        <div class="flex wrap mt-1">
+            <div class="column-md-5">
+                <div class="m-3 bg-accent border-1">
+                    <h1 class="pr-3 pl-3 pb-1 pt-3 text-lg font-serif text-black font-bold">Project Idea</h1>
+                    <p class="pl-3 pr-3 pb-2 text-xs font-serif text-black font-normal">This project was proposed for 
+                        development during the web technologies class of the "University of Alexandru Ioan Cuza" Iasi. 
+                    </p>
+                </div>
+            </div>
+            <div class="column-md-5">
+                <div class="m-3 bg-accent border-1">
+                    <h1 class="pr-3 pl-3 pb-1 pt-3 text-lg font-serif text-black font-bold">The developers of the project</h1>
+                    <p class="pl-3 pr-3 pb-2 text-xs font-serif text-black font-normal">The developers of this web site are <a href="https://github.com/lazaralex2002" target="_blank" rel="noopener noreferrer">Lazar Alexandru-Constantin</a>
+                        and <a href="https://github.com/Alex180220" target="_blank" rel="noopener noreferrer">Alexandru Furtuna</a>. We chose this project from the proposed list of projects because we found both challenging and 
+                        entertaining.
+                    </p>
+                </div>
+            </div>
+            <div class="column-md-8"> 
+                <div class="m-3 bg-accent border-1">
+                    <h1 class="pr-3 pl-3 pb-1 pt-3 text-lg font-serif text-black font-bold">About Smart Child Monitor</h1>
+                    <p class="pl-3 pr-3 pb-2 text-xs font-serif text-black font-normal"> The website has to provide information of 
+                        the real-time location of a child, it's parent, it's route etcetera. It will push notifications when the child will distance a certain distance from 
+                        a given point. Aditionally, notifications will be pushed regarding possible accidents such as collisions with ojects or autovehicles, when the child falls on the groud, or when it interracts with an animal. 
+                    </p>
+                </div>
+            </div>
+            <div class="column-md-8"> 
+                <div class="m-3 bg-accent border-1">
+                    <h1 class="pr-3 pl-3 pb-1 pt-3 text-lg font-serif text-black font-bold">Other functionalities</h1>
+                    <ul>
+                        <li>
+                            <p class="pl-3 pr-3 pb-2 text-xs font-serif text-black font-normal">
+                               To access this site's functionalities you first have to <a href="../front/register.html">register</a> or <a href="../front/login.html">login </a>if you already have an account.
+                            </p>
+                        </li>
+                        <li>
+                            <p class="pl-3 pr-3 pb-2 text-xs font-serif text-black font-normal">
+                                In the <a href="../front/monitor.html">Monitor Page</a> you can see information about the child. 
+                            </p>
+                        </li>
+                        <li>
+                            <p class="pl-3 pr-3 pb-2 text-xs font-serif text-black font-normal">
+                                In the <a href="../admin/dashboard.html">Configuration Page</a> you can set up the settings for the monitor page.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-secondary p-1">
+        <p class="text-center font-medium font-sans text-white text-sm m-0">Smart Children Monitor</p>
+    </footer>
+</body>
