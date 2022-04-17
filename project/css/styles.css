@@ -13,6 +13,9 @@
     --xl: "1440px";
 }
 
+a{
+    text-decoration: none;
+}
 .container{
     margin: auto;
 }
@@ -36,6 +39,9 @@
 .content-around{
     justify-content: space-around;
 }
+.content-between{
+    justify-content: space-between;
+}
 .items-center{
     align-items: center;
 }
@@ -56,6 +62,9 @@
 
 
 /* margin UTILITIES */
+.m-0{
+    margin: 0;
+}
 .m-1{
     margin: 0.5rem;
 }
@@ -75,6 +84,10 @@
     margin: 5rem;
 }
 
+.mx-0{
+    margin-left: 0rem;
+    margin-right: 0rem;
+}
 .mx-1{
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -100,6 +113,10 @@
     margin-right: 5rem;
 }
 
+.my-0{
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
 .my-1{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -125,26 +142,9 @@
     margin-bottom: 5rem;
 }
 
-.m-1{
-    margin: 0.5rem;
+.mt-0{
+    margin-top: 0;
 }
-.m-2{
-    margin: 1rem;
-}
-.m-3{
-    margin: 1.5rem;
-}
-.m-4{
-    margin: 2rem;
-}
-.m-5{
-    margin: 3rem;
-}
-.m-6{
-    margin: 5rem;
-}
-
-
 .mt-1{
     margin-top: 0.5rem;
 }
@@ -164,6 +164,9 @@
     margin-top: 5rem;
 }
 
+.mb-0{
+    margin-bottom: 0;
+}
 .mb-1{
     margin-bottom: 0.5rem;
 }
@@ -183,6 +186,10 @@
     margin-bottom: 5rem;
 }
 
+
+.ml-0{
+    margin-left: 0;
+}
 .ml-1{
     margin-left: 0.5rem;
 }
@@ -202,6 +209,9 @@
     margin-left: 5rem;
 }
 
+.mr-0{
+    margin-right: 0;
+}
 .mr-1{
     margin-right: 0.5rem;
 }
@@ -223,6 +233,9 @@
 
 /* PADDING UTILITIES */
 
+.p-0{
+    padding: 0;
+}
 .p-1{
     padding: 0.5rem;
 }
@@ -242,6 +255,10 @@
     padding: 5rem;
 }
 
+.px-0{
+    padding-left: 0;
+    padding-right: 0;
+}
 .px-1{
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -267,6 +284,10 @@
     padding-right: 5rem;
 }
 
+.py-0{
+    padding-top: 0;
+    padding-bottom: 0.;
+}
 .py-1{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -292,6 +313,9 @@
     padding-bottom: 5rem;
 }
 
+.p-0{
+    padding: 0;
+}
 .p-1{
     padding: 0.5rem;
 }
@@ -311,7 +335,9 @@
     padding: 5rem;
 }
 
-
+.pt-0{
+    padding-top: 0;
+}
 .pt-1{
     padding-top: 0.5rem;
 }
@@ -331,6 +357,10 @@
     padding-top: 5rem;
 }
 
+
+.pb-0{
+    padding-bottom: 0;
+}
 .pb-1{
     padding-bottom: 0.5rem;
 }
@@ -350,6 +380,9 @@
     padding-bottom: 5rem;
 }
 
+.pl-0{
+    padding-left: 0;
+}
 .pl-1{
     padding-left: 0.5rem;
 }
@@ -369,6 +402,10 @@
     padding-left: 5rem;
 }
 
+
+.pr-0{
+    padding-right: 0;
+}
 .pr-1{
     padding-right: 0.5rem;
 }
@@ -397,6 +434,21 @@
 }
 .w-75{
     width: 75%;
+}
+.w-100{
+    width: 100%;
+}
+.h-25{
+    height: 25%;
+}
+.h-50{
+    height: 50%;
+}
+.h-75{
+    height: 75%;
+}
+.h-100{
+    height: 100%;
 }
 
 body{
@@ -491,8 +543,70 @@ body{
     font-weight: 400;
 }
 
+
+/* NAVBAR */
+.navbar{
+    padding: 1rem;
+    z-index: 9999;
+}
+.navbar .nav-item{
+    font-size: 1.25rem;
+}
+.navbar ul li a{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+.navbar ul li a:hover{
+    /* TODO */
+}
+.navbar ul li{
+    list-style:none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.navbar ul{
+    flex-direction: row;
+}
+
+.admin{
+    transition: 0.4s ease-in-out;
+    background-color: #7ed0f7;
+    position: fixed;
+    left: -14rem;
+    top: 62px;
+}
+.admin ul{
+
+}
+.admin ul li{
+    list-style: none;
+}
+.admin ul li a{
+}
+.admin:hover{
+    left:0;
+    transition: 0.4s ease-in-out;
+}
+
+.invert{
+    filter: invert(1);
+}
+.icon{
+    height: 2rem;
+    width: auto;
+}
 /* FONTS */
 
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
 /* FONT FAMILY */
 .font-sans{
     font-family: "Rubik", sans-serif;
@@ -652,6 +766,23 @@ body{
     }
     .show-lg{
         display: block;
+    }
+    .navbar-logo{
+        font-size: 1rem;
+    }
+    .navbar ul li a{
+        font-size: 1rem;
+    }
+    .navbar ul li{
+        list-style:none;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    .navbar{
+        padding: 0.75rem;
+    }
+    .navbar .nav-item{
+        font-size: 1rem;
     }
 }
 @media screen and (max-width: 1440px) {
