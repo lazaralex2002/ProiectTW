@@ -794,6 +794,9 @@ body{
     .show-md{
         display: block;
     }
+    .navbar{
+        padding: 1.875rem 0!important;
+    }
     .navbar ul li a{
         font-size: 1rem;
     }
@@ -842,7 +845,7 @@ body{
         padding-right: 0.75rem;
     }
     .navbar{
-        padding: 1.875rem 0;
+        padding: 1.5rem 0;
     }
     .navbar .nav-item{
         font-size: 1rem;
