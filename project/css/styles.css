@@ -1,8 +1,8 @@
 :root{
     --primary: #174bac;
-    --secondary: #ff0000;
+    --secondary: #151455;
     --complementary: #7ed0f7;
-    --accent: #000000;
+    --accent: #eeeeee;
     --font-primary: #a5a5a5;
     --font-secondary: #1a1a1a;
 
@@ -57,7 +57,14 @@ a{
     background-color: var(--accent);
 }
 .bg-complementary{
-    background-color: var(--complamentary);
+    background-color: var(--complementary);
+}
+
+.border-1{
+    border-radius: 1rem;
+}
+.border-2{
+    border-radius: 2rem;
 }
 
 
@@ -546,7 +553,12 @@ body{
 
 /* NAVBAR */
 .navbar{
-    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     z-index: 9999;
 }
 .navbar .nav-item{
@@ -562,8 +574,8 @@ body{
 }
 .navbar ul li{
     list-style:none;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
 }
 .navbar ul{
     flex-direction: row;
@@ -576,14 +588,11 @@ body{
     left: -14rem;
     top: 62px;
 }
-.admin ul{
 
-}
 .admin ul li{
     list-style: none;
 }
-.admin ul li a{
-}
+
 .admin:hover{
     left:0;
     transition: 0.4s ease-in-out;
@@ -659,15 +668,15 @@ body{
     line-height: 3rem;
 }
 .text-xl{
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 4.5rem;
 }
 .text-2xl{
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 5rem;
 }
 .text-3xl{
-    font-size: 5rem;
+    font-size: 3.5rem;
     line-height: 6rem;
 }
 
@@ -700,9 +709,7 @@ body{
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
 }
-.hide-lg, .hide-md, .hide-sm, .hide-xs{
-    display: block;
-}
+
 .show-lg, .show-md, .show-sm, .show-xl, .show-xs{
     display: none;
 }
@@ -744,12 +751,19 @@ body{
         line-height: 3rem;
     }
     .text-2xl{
-        font-size: 2.75rem;
+        font-size: 2.25rem;
         line-height: 3.5rem;
     }
     .text-3xl{
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         line-height: 4.5rem;
+    }
+    .admin{
+        transition: 0.4s ease-in-out;
+        background-color: #7ed0f7;
+        position: fixed;
+        left: -12rem;
+        top: 62px;
     }
 }
 @media screen and (max-width: 768px) {
@@ -767,9 +781,6 @@ body{
     .show-lg{
         display: block;
     }
-    .navbar-logo{
-        font-size: 1rem;
-    }
     .navbar ul li a{
         font-size: 1rem;
     }
@@ -779,11 +790,15 @@ body{
         padding-right: 0.75rem;
     }
     .navbar{
-        padding: 0.75rem;
+        padding: 1.25rem 0;
     }
     .navbar .nav-item{
         font-size: 1rem;
     }
+    .admin{
+        top: 59px;
+    }
+    
 }
 @media screen and (max-width: 1440px) {
     .show-xl{
