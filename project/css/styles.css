@@ -605,6 +605,18 @@ body{
     height: 2rem;
     width: auto;
 }
+
+.menu-button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    position: fixed;
+    right: 0.5rem;
+    top: 0.5rem;
+}
+.menu-button .icon{
+    height: 2.5rem;
+}
 /* FONTS */
 
 .text-center{
@@ -773,6 +785,37 @@ body{
     .show-md{
         display: block;
     }
+    .navbar ul li a{
+        font-size: 1rem;
+    }
+    .navbar ul li{
+        list-style:none;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    .navbar ul{
+        position: fixed;
+        right: -100%;
+        left: unset;
+        top: 59px;
+        background-color: var(--complementary);
+        height: 100%;
+        max-width: 70%;
+        width:10rem;
+        transition: 0.4s ease-in-out;
+    }
+    .active ul{
+        right: 0;
+        transition: 0.4s ease-in-out;
+    }
+    .navbar ul{
+        flex-direction: column;
+        justify-content: start;
+        padding: 0;
+    }
+    .navbar ul li{
+        padding: 1rem;
+    }
 }
 @media screen and (max-width: 1024px) {
     .hide-lg{
@@ -790,7 +833,7 @@ body{
         padding-right: 0.75rem;
     }
     .navbar{
-        padding: 1.25rem 0;
+        padding: 1.875rem 0;
     }
     .navbar .nav-item{
         font-size: 1rem;
