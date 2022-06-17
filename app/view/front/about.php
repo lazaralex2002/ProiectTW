@@ -43,7 +43,7 @@
                     </li>
                     <li>
                         <p class="pl-3 pr-3 pb-2 text-xs font-serif text-black font-normal">
-                            In the <a href="../admin/dashboard.html">Configuration Page</a> you can set up the settings for the monitor page.
+                            In the <a href="../admin/dashboard.php">Configuration Page</a> you can set up the settings for the monitor page.
                         </p>
                     </li>
                 </ul>

@@ -293,7 +293,7 @@ a{
 
 .py-0{
     padding-top: 0;
-    padding-bottom: 0.;
+    padding-bottom: 0;
 }
 .py-1{
     padding-top: 0.5rem;
@@ -1147,8 +1147,16 @@ body{
 }
 
 footer{
+    position:fixed;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    width:100%;
+    z-index:99;
+    /*
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
+    */
 }

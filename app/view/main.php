@@ -8,11 +8,14 @@ include 'component/head.php';
 <?php
 include 'component/navbar.php';
 
-if($uri == ''){
+if($uri == '')
+{
     include $links['home']['view'];
 }
-else{
-    if (isset($links[$uri]['view'])){
+else
+{
+    if (isset($links[$uri]['view']))
+    {
         include $links[$uri]['view'];
     }
     else include $links['404']['view'];
