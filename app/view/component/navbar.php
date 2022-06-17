@@ -8,7 +8,6 @@
         <li><a class="text-white font-serif font-medium" href="main.php?uri=monitor">Monitor</a></li>
         <li><a class="text-white font-serif font-medium" href="main.php?uri=admin">Configuration</a></li>
         <li><a class="text-white font-serif font-medium" href="main.php?uri=contact">Contact</a></li>
-
     </ul>
     <a class="mr-1 ml-1 nav-item font-medium text-white font-serif hide-md" href="main.php?uri=login">Login</a>
 </nav>
