@@ -24,6 +24,8 @@
                         <input class="form-input" type="password" id="pass" name="pass" placeholder="Password"><br>
                     </div>
                     <button class="button mt-3" type="submit">Log in</button>
+                    <p class = "column-lg-10 font-sans text-red text-sm font-normal">User does not exist or incorrect password</p>
+
                     <div class="column-lg-10">
                         <p class="font-sans text-white text-sm font-normal">If you don't have an account, click here to create one</p>
                         <a class="button" href="register">Register</a>

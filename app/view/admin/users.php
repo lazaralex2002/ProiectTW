@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] != 1 )
+{
+    header("Location:home");
+}
 include "adminControls.php";
 ?>
 <div class="ml-6 mt-6 mr-1">
@@ -6,47 +11,49 @@ include "adminControls.php";
         <h1 class="ml-3 text-3xl font-serif text-black font-bold">Users Settings</h1>
         <div class="flex wrap">
             <div class="column-lg-10 mb-2" style="overflow-x: auto;">
-                <table class="bg-accent p-2 border-1 w-100 text-center">
+                <table id="table" class="bg-accent p-2 border-1 w-100 text-center">
                     <tr>
                         <th>#</th>
                         <th>First name</th>
                         <th>Last Name</th>
                         <th>email</th>
-                        <th>Number</th>
+                        <th>Phone Number</th>
+                        <th>User Name</th>
+                        <th>Admin</th>
                         <th>Actions</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Alex</td>
-                        <td>Furtuna</td>
-                        <td>alexfurtuna95@gmail.com</td>
-                        <td>0745087654</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Alex</td>
-                        <td>Furtuna</td>
-                        <td>alexfurtuna95@gmail.com</td>
-                        <td>0745087654</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Alex</td>
-                        <td>Furtuna</td>
-                        <td>alexfurtuna95@gmail.com</td>
-                        <td>0745087654</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Alex</td>
-                        <td>Furtuna</td>
-                        <td>alexfurtuna95@gmail.com</td>
-                        <td>0745087654</td>
-                        <td></td>
-                    </tr>
+                    <div id="tbody">
+                        <?php
+                        require_once 'app/controller/dbConfig.php';
+                        $sql = "SELECT id, fname, lname, email, phone, uname, password, admin FROM users ";
+
+                        if ($stmt = $conn->query($sql))
+                        {
+                            while ($row = $stmt->fetch(PDO::FETCH_NUM))
+                            {
+                                $id = $row[0];
+                                $fname = $row[1];
+                                $lname = $row[2];
+                                $email = $row[3];
+                                $phone = $row[4];
+                                $uname = $row[5];
+                                $passwd = $row[6];
+                                $admin = $row[7];
+                                ?>
+                                <tr>
+                                    <td><?php echo $id ?></td>
+                                    <td contenteditable="true"><?php echo $fname?></td>
+                                    <td contenteditable="true"><?php echo $lname?></td>
+                                    <td contenteditable="true"><?php echo $email?></td>
+                                    <td contenteditable="true"><?php echo $phone?></td>
+                                    <td contenteditable="true"><?php echo $uname?></td>
+                                    <td contenteditable="true"><?php echo $admin?></td>
+                                </tr>
+                            <?php
+                            }
+                        }
+                        ?>
+                    </div>
                 </table>
             </div>
             <div class="column-md-5 mb-3">

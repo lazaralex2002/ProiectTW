@@ -3,13 +3,15 @@
 require_once 'app/controller/dbConfig.php';
 
 $username_err = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
     $username = trim($_POST["uname"], FILTER_SANITIZE_STRING);
     if (empty($username)) {
         $username_err = "Please enter a username.";
     } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', $username)) {
         $username_err = "Username can only contain letters, numbers, and underscores.";
-    } else {
+    } else
+    {
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE uname = " . '\'' . $username . '\'';
         if ($stmt = $conn->query($sql)) {
@@ -97,24 +99,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $passwd_err = "Password is too long";
     }
     echo $passwd_err;
-}
-$errorSet = [$fname_err, $lname_err, $email_err, $phone_err, $username_err, $passwd_err, $adress_err];
-if (empty($email_err) && empty($username_err) && empty($lname_err) && empty($lname_err) && empty($phone_err) && empty($adress_err) && empty($passwd_err))
-{
-    try
+    $errorSet = [$fname_err, $lname_err, $email_err, $phone_err, $username_err, $passwd_err, $adress_err];
+    if (empty($email_err) && empty($username_err) && empty($lname_err) && empty($lname_err) && empty($phone_err) && empty($adress_err) && empty($passwd_err))
     {
-        $conn->beginTransaction();
-        $sql = "INSERT INTO `users`(`fname`, `lfame`, `email`, `phone`, `uname`, `password`) VALUES ( " . '\'' . " $fname" . '\'' . "," . '\'' . "$lname " . '\'' . "," . '\'' . " $email " . '\'' . "," . '\'' . " $phone " . '\'' . ", " . '\'' . "$username " . '\'' . "," . '\'' . " $pass" . '\'' . " )";
-        $stmt = $conn->exec($sql);
-        $conn->commit();
-    } catch (Exception $e) {
-        echo $e->getMessage();
-        $conn->rollback();
-        throw $e;
+        try
+        {
+            $conn->beginTransaction();
+            $sql = "INSERT INTO `users`(`fname`, `lfame`, `email`, `phone`, `uname`, `password`) VALUES ( " . '\'' . " $fname" . '\'' . "," . '\'' . "$lname " . '\'' . "," . '\'' . " $email " . '\'' . "," . '\'' . " $phone " . '\'' . ", " . '\'' . "$username " . '\'' . "," . '\'' . " $pass" . '\'' . " )";
+            $stmt = $conn->exec($sql);
+            $conn->commit();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            $conn->rollback();
+            throw $e;
+        }
+        include 'registerSuccess.php';
+    } else
+    {
+        include 'registerError.php';
     }
-    include 'registerSuccess.php';
-} else
-{
-    include 'registerError.php';
 }
 ?>
