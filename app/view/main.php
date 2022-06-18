@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <?php
-$page = $uri[3];
+$page = $uri[count($uri) - 1];
 
 if($page == '')
 {
