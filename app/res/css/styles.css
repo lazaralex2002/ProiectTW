@@ -528,6 +528,9 @@ body{
     transition: 0.3s ease-in-out;
 }
 
+.link:hover
+{text-decoration:underline;}
+
 .form-label{
     font-family: "Rubik";
     font-weight: 500;
@@ -701,14 +704,15 @@ body{
     line-height: 6rem;
 }
 
-
 /* FONT COLOR */
-
 .text-white{
     color: #ffffff;
 }
 .text-black{
     color: #000000;
+}
+.text-red{
+    color: #ff6c00;
 }
 .text-primary{
     color: var(--primary);

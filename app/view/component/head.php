@@ -22,4 +22,10 @@
             rel="stylesheet">
     <link rel="stylesheet" href="app/res/css/styles.css">
     <script src="app/res/js/main.js"></script>
+    <?php
+    if($page =='register')
+    {
+        echo '<script src= "app/res/js/register.js" ></script>';
+    }
+    ?>
 </head>

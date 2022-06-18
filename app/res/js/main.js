@@ -1,8 +1,11 @@
-function navOpen() {
+function navOpen()
+{
     var x = document.getElementById("navbar");
-    if (x.classList.contains("active")) {
+    if (x.classList.contains("active"))
+    {
       x.classList.remove("active")
-    } else {
+    } else
+    {
       x.classList.add("active")
     }
   }

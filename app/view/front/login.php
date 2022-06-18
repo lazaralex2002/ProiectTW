@@ -26,7 +26,7 @@
                     <button class="button mt-3" type="submit">Log in</button>
                     <div class="column-lg-10">
                         <p class="font-sans text-white text-sm font-normal">If you don't have an account, click here to create one</p>
-                        <a class="button" href="register.html">Register</a>
+                        <a class="button" href="register">Register</a>
                     </div>
                 </div>
             </form>

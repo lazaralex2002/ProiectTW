@@ -15,6 +15,7 @@ $links['aspect']['view']                  = 'app/view/admin/aspect.php';
 $links['dashboard']['view']               = 'app/view/admin/dashboard.php';
 $links['settings']['view']                = 'app/view/admin/settings.php';
 $links['users']['view']                   = 'app/view/admin/users.php';
+$links['registerData']['view']            = 'app/view/front/registerData.php';
 
 $links['home']['title']                   = 'Home';
 $links['about']['title']                  = 'About us';
@@ -29,4 +30,5 @@ $links['aspect']['title']                 = 'Aspect';
 $links['dashboard']['title']              = 'Dashboard';
 $links['settings']['title']               = 'Settings';
 $links['users']['title']                  = 'Users';
+$links['registerData']['title']           = 'Register';
 ?>
