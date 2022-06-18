@@ -6,6 +6,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] != 1 )
 }
 include "adminControls.php";
 ?>
+<script type="text/javascript" href="app/res/js/users.js"></script>
 <div class="ml-6 mt-6 mr-1">
     <div class="container">
         <h1 class="ml-3 text-3xl font-serif text-black font-bold">Users Settings</h1>
@@ -48,6 +49,7 @@ include "adminControls.php";
                                     <td contenteditable="true"><?php echo $phone?></td>
                                     <td contenteditable="true"><?php echo $uname?></td>
                                     <td contenteditable="true"><?php echo $admin?></td>
+                                    <td contenteditable="true"></td>
                                 </tr>
                             <?php
                             }
