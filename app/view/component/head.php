@@ -4,9 +4,10 @@
 
     <title>
         <?php
-        if(isset($links[$uri]['title'])){
-            echo app_title . ' - ' . $links[$uri]['title'];
-        }else{
+        if(isset($links[$page]['title'])){
+            echo app_title . ' - ' . $links[$page]['title'];
+        }else
+        {
             echo app_title . ' - ' . $links['404']['title'];
         }
          ?>

@@ -1,25 +1,30 @@
 <!doctype html>
 <html lang="en">
+<?php
+$page = $uri[3];
 
-<?php 
+if($page == '')
+{
+    $page='home';
+}
+else
+{
+    if(!isset($links[$page]['view']))
+    {
+        $page ='404';
+    }
+}
+?>
+
+
+<?php
 include 'component/head.php';
 ?>
 <body>
 <?php
 include 'component/navbar.php';
 
-if($uri == '')
-{
-    include $links['home']['view'];
-}
-else
-{
-    if (isset($links[$uri]['view']))
-    {
-        include $links[$uri]['view'];
-    }
-    else include $links['404']['view'];
-}
+include $links[$page]['view'];
 
 include 'component/footer.php';
 ?>
