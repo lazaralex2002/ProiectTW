@@ -18,9 +18,8 @@ if (isset($_POST["login"])) {
         }
     }
     if ($ok == 1) {
-
         //Get user info from db
-        $sql = "SELECT fname, lname, email, phone, uname, password, admin FROM users WHERE uname = " . '\'' . $username . '\'';
+        include 'app/model/get_user.php';
         if ($stmt = $conn->query($sql)) {
             while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 $_SESSION["fname"] = $row[0];
