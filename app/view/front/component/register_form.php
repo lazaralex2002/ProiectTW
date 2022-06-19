@@ -7,7 +7,7 @@
     architecto labore omnis nulla deserunt minus. Officia dolorem quod fugit temporibus mollitia, quasi
     dolorum rerum quia.
 </h2>
-<form action="register" method="post">
+<form action="insertEntity" method="post">
     <div class="flex wrap">
         <div class="column-md-5">
             <label class="form-label" for="fname">First name:</label><br>

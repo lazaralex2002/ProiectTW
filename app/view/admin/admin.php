@@ -1,13 +1,14 @@
 <?php
     include "component/sidebar.php";
-    print_r($_SESSION);
 
-    if(!isset($_SESSION['admin_view'])){
+    if(!isset($_SESSION['admin_view']))
+    {
         $_SESSION['admin_view'] = 'dashboard';
     }
     include  'app/view/admin/view/'.$_SESSION['admin_view'] . '.php';
 
-    if(isset($_POST['update_user'])){
+    if(isset($_POST['update_user']))
+    {
         $lname= $_POST['lname'];
         $fname= $_POST['fname'];
         $phone= $_POST['phone'];

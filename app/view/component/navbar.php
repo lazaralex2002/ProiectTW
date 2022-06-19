@@ -5,12 +5,12 @@
     <ul class="flex m-0 content-center">
         <li><a class="text-white font-serif font-medium" href="home">Home</a></li>
         <li><a class="text-white font-serif font-medium" href="about">About</a></li>
-        <li><a class="text-white font-serif font-medium" href="monitor">Monitor</a></li>
         <?php
         if (isset($_SESSION['uname'])) { ?>
             <li><a class="text-white font-serif font-medium" href="admin">Configuration</a></li>
-            <li><a class="text-white font-serif font-medium" href="contact">Contact</a></li>
+            <li><a class="text-white font-serif font-medium" href="monitor">Monitor</a></li>
         <?php } ?>
+        <li><a class="text-white font-serif font-medium" href="contact">Contact</a></li>
     </ul>
     <?php
     if (!isset($_SESSION["uname"])) :

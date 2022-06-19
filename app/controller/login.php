@@ -3,25 +3,31 @@ require_once 'app/controller/dbConfig.php';
 $ok = 0;
 
 $username_err = "";
-if (isset($_POST["login"])) {
+if (isset($_POST["login"]))
+{
     $username = trim($_POST["uname"], FILTER_SANITIZE_STRING);
     $password = trim($_POST["pass"], FILTER_SANITIZE_STRING);
 
-    include 'app/model/get_user.php';
+    include 'app/model/get_user_credentials.php';
 
-    
-    if ($stmt = $conn->query($sql)) {
-        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            if ($row[1] == $password) {
+    if ($stmt = $conn->query($sql))
+    {
+        while ($row = $stmt->fetch(PDO::FETCH_NUM))
+        {
+            if ($row[1] == $password)
+            {
                 $ok = 1;
             }
         }
     }
-    if ($ok == 1) {
+    if ($ok == 1)
+    {
         //Get user info from db
         include 'app/model/get_user.php';
-        if ($stmt = $conn->query($sql)) {
-            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        if ($stmt = $conn->query($sql))
+        {
+            while ($row = $stmt->fetch(PDO::FETCH_NUM))
+            {
                 $_SESSION["fname"] = $row[0];
                 $_SESSION["lname"] = $row[1];
                 $_SESSION["email"] = $row[2];
@@ -34,7 +40,8 @@ if (isset($_POST["login"])) {
         header("Location:home");
     }
 }
-if (isset($_POST["logout"])) {
+if (isset($_POST["logout"]))
+{
     session_destroy();
     session_abort();
     header("Location:home");

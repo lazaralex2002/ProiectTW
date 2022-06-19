@@ -5,13 +5,19 @@
     <div class="column-md-6">
         <div class="p-3">
             <?php
-            if (isset($_POST['register'])) {
-                if($ok == 1){
+            if (isset($_POST['register']))
+            {
+                if($ok == 1)
+                {
                     include 'component/register_succes.php';
-                }else{
+                }
+                else
+                {
                     include 'component/register_failure.php';
                 }
-            } else {
+            }
+            else
+            {
                 include 'component/register_form.php';
             }
             ?>

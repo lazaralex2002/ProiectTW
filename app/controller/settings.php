@@ -10,7 +10,9 @@ $links['contact']['view']                 = 'app/view/front/contact.php';
 $links['login']['view']                   = 'app/view/front/login.php';
 $links['register']['view']                = 'app/view/front/register.php';
 $links['404']['view']                     = 'app/view/front/404.php';
+$links['insertEntity']['view']            = 'app/view/admin/admin.php';
 
+$links['insertEntity']['controller']          = 'app/controller/insertEntity.php';
 $links['register']['controller']          = 'app/controller/register.php';
 $links['login']['controller']             = 'app/controller/login.php';
 $links['admin']['controller']             = 'app/controller/admin.php';
