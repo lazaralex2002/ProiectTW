@@ -15,9 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE uname = " . '\'' . $username . '\'';
-        if ($stmt = $conn->query($sql)) {
+        if ($stmt = $conn->query($sql))
+        {
             $rows = $stmt->rowCount();
-            if ($rows > 0) {
+            if ($rows > 0)
+            {
                 $username_err = 'There already is an user with this username';
             }
         }
