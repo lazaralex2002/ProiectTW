@@ -588,14 +588,20 @@ body{
 
 .admin{
     transition: 0.4s ease-in-out;
-    background-color: #7ed0f7;
+    background-color: var(--complementary);
     position: fixed;
-    left: -14rem;
+    left: -13rem;
     top: 62px;
+    overflow: hidden;
 }
 
 .admin ul li{
     list-style: none;
+}
+
+.active{
+    background-color: var(--secondary);
+    box-shadow: 0px 0px 2px 2px var(--secondary);
 }
 
 .admin:hover{

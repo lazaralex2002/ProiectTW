@@ -1,10 +1,9 @@
 <?php
-session_start();
+//session_start();
 if (!isset($_SESSION['admin']) || $_SESSION['admin'] != 1 )
 {
     header("Location:home");
 }
-include "adminControls.php";
 ?>
 <script type="text/javascript" href="app/res/js/users.js"></script>
 <div class="ml-6 mt-6 mr-1">

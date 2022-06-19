@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `fname` varchar(50) NOT NULL,
-  `lfame` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `phone` varchar(50) NOT NULL,
   `uname` varchar(50) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `users` (
 -- Eliminarea datelor din tabel `users`
 --
 
-INSERT INTO `users` (`id`, `fname`, `lfame`, `email`, `phone`, `uname`, `password`, `created_at`, `admin`) VALUES
+INSERT INTO `users` (`id`, `fname`, `lname`, `email`, `phone`, `uname`, `password`, `created_at`, `admin`) VALUES
 (1, 'test', 'test', 'test@gmail.com', '0000000000', 'test', 'test', '2022-06-18 18:05:14', 0),
 (2, ' Alexandru Contantin', 'Lazar ', ' lazar.alex.2002@gmail.com ', ' 0745525452 ', 'lazar ', ' 234', '2022-06-18 19:25:57', 0),
 (3, ' Alexandru', 'Zaharia ', ' zaharia@gmail.com ', ' 0000000000 ', 'zaha12 ', ' zaha12', '2022-06-18 20:18:29', 0),

@@ -6,17 +6,24 @@
         <li><a class="text-white font-serif font-medium" href="home">Home</a></li>
         <li><a class="text-white font-serif font-medium" href="about">About</a></li>
         <li><a class="text-white font-serif font-medium" href="monitor">Monitor</a></li>
-        <li><a class="text-white font-serif font-medium" href="admin">Configuration</a></li>
-        <li><a class="text-white font-serif font-medium" href="contact">Contact</a></li>
+        <?php
+        if (isset($_SESSION['uname'])) { ?>
+            <li><a class="text-white font-serif font-medium" href="admin">Configuration</a></li>
+            <li><a class="text-white font-serif font-medium" href="contact">Contact</a></li>
+        <?php } ?>
     </ul>
     <?php
-        if(!isset($_SESSION["uname"]) ):
+    if (!isset($_SESSION["uname"])) :
     ?>
-    <a class="mr-1 ml-1 nav-item font-medium text-white font-serif hide-md" href="login">Login</a>
+        <a class="mr-1 ml-1 nav-item font-medium text-white font-serif hide-md" href="login">Login</a>
     <?php
-        else:
+    else :
     ?>
-        <a class="mr-1 ml-1 nav-item font-medium text-white font-serif hide-md" href="logout">Logout</a>
+        <form action="login" method="POST">
+            <a class="mr-1 ml-1 nav-item font-medium text-white font-serif hide-md" href="javascript:void(0);" onclick="document.getElementById('logout').click(); ">Logout</a>
+            <input type="submit" hidden name="logout" value="" id="logout" />
+        </form>
+
     <?php
     endif;
     ?>

@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <?php
-$page = $uri[count($uri) - 1];
 
 if($page == '')
 {
@@ -27,5 +26,6 @@ include 'component/navbar.php';
 include $links[$page]['view'];
 
 include 'component/footer.php';
+
 ?>
 </body>

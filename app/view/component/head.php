@@ -9,7 +9,7 @@
         {
             echo app_title . ' - ' . $links['404']['title'];
         }
-        session_start();
+        //session_start();
          ?>
     </title>
     <meta name="description" content="Proiect TW">

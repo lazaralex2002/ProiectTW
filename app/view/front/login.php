@@ -13,7 +13,7 @@
                 architecto labore omnis nulla deserunt minus. Officia dolorem quod fugit temporibus mollitia, quasi
                 dolorum rerum quia.
             </h2>
-            <form action="loginData" method="post">
+            <form action="login" method="post">
                 <div class="flex wrap">
                     <div class="column-md-5">
                         <label class="form-label" for="uname">Username:</label><br>
@@ -23,7 +23,10 @@
                         <label class="form-label" for="pass">Password:</label><br>
                         <input class="form-input" type="password" id="pass" name="pass" placeholder="Password"><br>
                     </div>
-                    <button class="button mt-3" type="submit">Log in</button>
+                    <button class="button mt-3" name="login" type="submit">Log in</button>
+                    <?php if ($ok == 0 && isset($_POST['login'])) { ?>
+                        <p class="column-lg-10 font-sans text-red text-sm font-normal">User does not exist or incorrect password</p>
+                    <?php } ?>
                     <div class="column-lg-10">
                         <p class="font-sans text-white text-sm font-normal">If you don't have an account, click here to create one</p>
                         <a class="button" href="register">Register</a>
