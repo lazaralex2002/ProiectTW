@@ -794,7 +794,7 @@ body{
         transition: 0.4s ease-in-out;
         background-color: #7ed0f7;
         position: fixed;
-        left: -13rem;
+        left: -15rem;
         top: 62px;
     }
 }
