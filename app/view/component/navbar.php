@@ -1,4 +1,4 @@
-<nav class="navbar bg-secondary flex content-between items-center" id="navbar">
+<nav class="navbar bg-primary flex content-between items-center" id="navbar">
     <!-- to be replaced with logo -->
     <button onclick="navOpen()" class="show-md mr-2 ml-2 menu-button"><img src="app/res/img/menu.png" class="icon invert"></button>
     <a class="ml-1 nav-item text-white font-serif font-medium hide-md" href="home">SMART CHILDREN MONITOR</a>
