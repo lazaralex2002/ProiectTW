@@ -28,4 +28,10 @@
         echo '<script src= "./app/res/js/register.js" ></script>';
     }
     ?>
+    <?php
+    if($page =='monitor')
+    {
+    echo '<script src= "./app/res/js/monitor.js" defer></script>';
+    }
+    ?>
 </head>

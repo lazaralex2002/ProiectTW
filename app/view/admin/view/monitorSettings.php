@@ -30,7 +30,7 @@
                     <div id="tbody">
                         <?php
                         require_once 'app/controller/dbConfig.php';
-                        $sql = "SELECT id, uname, type FROM entities ";
+                        $sql = "SELECT id, uname, type FROM entities where owner = ". '\'' .$_SESSION['uname'] . '\'';
 
                         if ($stmt = $conn->query($sql))
                         {

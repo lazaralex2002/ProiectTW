@@ -5,6 +5,7 @@ $ok = 0;
 $rows = 0;
 $username_err = "";
 $radobutton_err ="";
+$owner = $_SESSION['uname'];
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $username = trim($_POST["uname"], FILTER_SANITIZE_STRING);
@@ -44,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         try
         {
             $conn->beginTransaction();
-            $sql = "INSERT INTO `entities`(`uname`, `type`) VALUES ( " . '\'' . " $username" . '\'' . "," . '\'' . "$type " . '\'' . " )";
+            $sql = "INSERT INTO `entities`(`uname`, `type`,`owner` ) VALUES ( " . '\'' . " $username" . '\'' . "," . '\'' . "$type " . '\''  . ',\'' . "$owner" . '\'' . " )";
             $stmt = $conn->exec($sql);
             $conn->commit();
         } catch (Exception $e)

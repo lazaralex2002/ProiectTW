@@ -8,13 +8,15 @@ if($page == '')
 }
 else
 {
-    if(!isset($links[$page]['view']))
+    if(!isset($links[$page]['view']) && $page != 'api')
     {
         $page ='404';
     }
 }
 ?>
-
+<?php
+if ($page != 'api'):
+?>
 
 <?php
 include 'component/head.php';
@@ -29,3 +31,4 @@ include 'component/footer.php';
 
 ?>
 </body>
+<?php endif; ?>

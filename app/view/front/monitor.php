@@ -1,2 +1,3 @@
+<div id="canvas">
 
-    <iframe class = "mt-6" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5424.609398565352!2d27.570724877575383!3d47.17147056663282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafb61af5ef507%3A0x95f1e37c73c23e74!2sUniversitatea%20Alexandru%20Ioan%20Cuza%20din%20Ia%C8%99i!5e0!3m2!1sro!2sro!4v1650216550350!5m2!1sro!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
