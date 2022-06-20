@@ -1272,7 +1272,21 @@ footer{
     position:fixed;
 }
 
+.entityList {
+
+    border:3px solid;
+    border-radius:5% ;
+    border-color: #a5a5a5;
+    background-color: #a5a5a5;
+    z-index: 99;
+}
+
 #canvas
 {
     position: absolute;
+}
+
+.noOverflow
+{
+    overflow: hidden;
 }
