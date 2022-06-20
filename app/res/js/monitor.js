@@ -1,6 +1,6 @@
 //leave up
-var colors = ["#340","#123",
-    "#000" , "#895" , "#359"];
+var colors = ["#cb3c3c","#1c80e7",
+    "#9dff24" , "#4fb095" , "#a13fe3"];
 let positionArray = [];
 var messages = document.getElementById('messages');
 //done
@@ -143,7 +143,7 @@ function callAPI()
                 for( j = i + 1; j < array.length; ++j )
                 {
                     if ( positionArray[i][2] != positionArray[j][2] && Math.abs(positionArray[i][0] - positionArray[j][0]) <= 50  && Math.abs(positionArray[i][1] - positionArray[j][1]) <= 50 )
-                        messages.innerHTML += "<p>Collision between"+positionArray[i][2].toString()+" " +
+                        messages.innerHTML += "<p>Collision between "+positionArray[i][2].toString()+" " +
                             positionArray[i][3].toString() + " and "+ positionArray[j][2].toString()+" " +
                             positionArray[j][3].toString() +"</p>"
                 }

@@ -1,5 +1,5 @@
 <?php
-$circleOffset =  0.5;
+$circleOffset =  1;
 $movement = [0, -1, 1, -2, 2];
 
 
