@@ -2,8 +2,9 @@
 var colors = ["#340","#123",
     "#000" , "#895" , "#359"];
 let positionArray = [];
+var messages = document.getElementById('messages');
 //done
-function ballCircle(id, x , y)
+function ballCircle(id, x , y, type, name)
 {
     var body = document.getElementsByTagName('body').item(0).className='noOverflow';
     var navbarHeight = document.getElementById('navbar').clientHeight;
@@ -34,6 +35,7 @@ function ballCircle(id, x , y)
     container.style.marginTop = 'auto';
     container.style.marginTop = navbarHeight.toString() + 'px';
 
+
     var canvas = document.getElementById('canvas');
     canvas.style.height = canvasHeight.toString() + 'px';
     canvas.style.width = canvasWidth.toString() + 'px';
@@ -41,7 +43,7 @@ function ballCircle(id, x , y)
     canvas.style.top = 'auto';
 
     var messageBox = document.getElementById('messageBox');
-    messageBox.style.height = messageBoxHeight.toString() + 'px';
+    messageBox.style.height = messageBoxHeight .toString() + 'px';
     messageBox.style.width = messageBoxWidth.toString() + 'px';
     messageBox.style.bottom = 'auto';
     messageBox.style.top = 'auto';
@@ -64,6 +66,20 @@ function ballCircle(id, x , y)
     entityList.className = 'entityList';
 
 
+    var messagesWidth = messageBoxWidth ;
+    var messagesHeight = messageBoxHeight / 100.0 * 33.3;
+    messages.style.width = (entityListWidth - 30).toString() + 'px';
+    messages.style.height = (messageBoxHeight / 100.0* 43.0).toString() + 'px';
+    messages.style.marginTop = '1rem';
+    messages.style.bottom = 'auto';
+    messages.style.top = '10px' ;
+    messages.style.right = 'auto';
+    messages.style.marginLeft = 0+'px';
+    messages.style.left = 'auto';
+    messages.style.left = 'auto';
+    messages.style.overflowY = 'scroll';
+    messages.className = 'bg-accent p-2 border-1 w-100 text-center';
+
     canvasWidth = canvasWidth - 50; //offset for balls
 
     var ball = document.getElementById(id.toString());
@@ -72,7 +88,7 @@ function ballCircle(id, x , y)
 
     ball.style.left = coordX + 'px';
     ball.style.top = coordY + 'px';
-    positionArray[id] = [coordX + 25 , coordY + 25];
+    positionArray[id] = [coordX + 25 , coordY + 25, type, name];
     ball.style.backgroundColor = colors[id];
     ball.style.borderColor = colors[id];
 }
@@ -91,7 +107,6 @@ function doAPIcall(type, url, callback)
     xmlhttp.send();
 }
 
-
 function callAPI()
 {
     doAPIcall(
@@ -103,33 +118,36 @@ function callAPI()
                 return entities[key];
             });
             document.getElementById("canvas").innerHTML = "";
-            var entityTable = document.getElementById('entityList');
-            entityTable.innerHTML = "<table id=\"table\" class=\"bg-accent p-2 border-1 w-100 text-center\">\n" +
-                "                    <tr>\n" +
-                "                        <th>Id</th>\n" +
-                "                        <th>User Name</th>\n" +
-                "                        <th>Type</th>\n" +
-                "                        <th>Colour</th>\n" +
-                "                    </tr>"+
-                "                    </table>";
+            var tbody = document.getElementById('tableBody');
+            tbody.innerHTML="<tr>\n" +
+                "                    <th>Id</th>\n" +
+                "                    <th>User Name</th>\n" +
+                "                    <th>Type</th>\n" +
+                "                    <th>Colour</th>\n" +
+                "                    </tr>";
             for (i = 0; i < array.length; i++)
             {
                 document.getElementById("canvas").innerHTML += "<div id = \"" + i.toString() + "\" class =\"ball\"> ";
-                ballCircle(i, entities[i]['x'], entities[i]['y']);
-                
-
-
+                ballCircle(i, entities[i]['x'], entities[i]['y'], entities[i]['type'] , entities[i]['name']);
+                tbody.innerHTML+= "<tr>" +
+        "                                    <td>" +i.toString() +"</td>" +
+        "                                    <td contenteditable=\"false\">"+ entities[i]['name']+"</td>" +
+        "                                    <td contenteditable=\"false\">"+ entities[i]['type']+"</td>" +
+        "                                    <td><div style=\"margin:auto ;width: 2rem; height:2rem; background-color:" +
+                                                         colors[i]+" \"></div> </td>" +
+        "                                </tr>"
             }
             let j;
             for (i = 0; i < array.length; i++)
             {
                 for( j = i + 1; j < array.length; ++j )
                 {
-                    if ( Math.abs(positionArray[i][0] - positionArray[j][0]) <= 50  && Math.abs(positionArray[i][1] - positionArray[j][1]) <= 50 )
-                        console.log('collision');
+                    if ( positionArray[i][2] != positionArray[j][2] && Math.abs(positionArray[i][0] - positionArray[j][0]) <= 50  && Math.abs(positionArray[i][1] - positionArray[j][1]) <= 50 )
+                        messages.innerHTML += "<p>Collision between"+positionArray[i][2].toString()+" " +
+                            positionArray[i][3].toString() + " and "+ positionArray[j][2].toString()+" " +
+                            positionArray[j][3].toString() +"</p>"
                 }
             }
-
         }
     );
     setTimeout(callAPI,200);
