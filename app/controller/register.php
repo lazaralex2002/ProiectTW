@@ -5,7 +5,7 @@ $ok = 0;
 $username_err = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    $username = trim($_POST["uname"], FILTER_SANITIZE_STRING);
+    $username = trim($_POST["uname"], ' ');
     if (empty($username))
     {
         $username_err = "Please enter a username.";
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     }
 
     $lname_err = "";
-    $lname = trim($_POST["lname"], FILTER_SANITIZE_STRING);
+    $lname = trim($_POST["lname"], ' ');
     if (empty($lname)) {
         $lname_err = "Please enter a last name.";
     } elseif (!preg_match('/^[a-zA-Z]+$/', $lname)) {
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     echo $lname_err;
 
     $fname_err = "";
-    $fname = trim($_POST["fname"], FILTER_SANITIZE_STRING);
+    $fname = trim($_POST["fname"], ' ');
     if (empty($fname)) {
         $fname_err = "Please enter a first name.";
     } elseif (!preg_match('/^[a-z A-Z]+$/', $fname)) {
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     echo $fname_err;
 
     $phone_err = "";
-    $phone = trim($_POST["phone"], FILTER_SANITIZE_NUMBER_INT);
+    $phone = trim($_POST["phone"]);
     if (empty($fname)) {
         $phone_err = "Please enter a phone number.";
     } elseif (!preg_match('/^[0-9]+$/', $phone)) {
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     echo $phone_err;
 
     $adress_err = "";
-    $adress = trim($_POST["addr"], FILTER_SANITIZE_STRING);
+    $adress = trim($_POST["addr"], ' ');
     if (empty($adress)) {
         $adress_err = "Please enter an address.";
     } elseif (!preg_match('/^[0-9 a-zA-Z.]+$/', $adress)) {
@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     echo $adress_err;
 
     $passwd_err = "";
-    $pass = trim($_POST["pass"], FILTER_SANITIZE_STRING);
+    $pass = trim($_POST["pass"]);
     if (empty($pass)) {
         $passwd_err = "Please enter a password.";
     } elseif (!preg_match('/^[0-9a-zA-Z._]+$/', $pass)) {
@@ -105,10 +105,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $errorSet = [$fname_err, $lname_err, $email_err, $phone_err, $username_err, $passwd_err, $adress_err];
     if (empty($email_err) && empty($username_err) && empty($lname_err) && empty($lname_err) && empty($phone_err) && empty($adress_err) && empty($passwd_err))
     {
+        $pass_hash = trim(password_hash($pass, PASSWORD_DEFAULT));
+        
         try
         {
             $conn->beginTransaction();
-            $sql = "INSERT INTO `users`(`fname`, `lname`, `email`, `phone`, `uname`, `password`) VALUES ( " . '\'' . " $fname" . '\'' . "," . '\'' . "$lname " . '\'' . "," . '\'' . " $email " . '\'' . "," . '\'' . " $phone " . '\'' . ", " . '\'' . "$username " . '\'' . "," . '\'' . " $pass" . '\'' . " )";
+            $sql = "INSERT INTO `users`(`fname`, `lname`, `email`, `phone`, `uname`, `password`) VALUES ( " . '\'' . " $fname" . '\'' . "," . '\'' . "$lname " . '\'' . "," . '\'' . " $email " . '\'' . "," . '\'' . " $phone " . '\'' . ", " . '\'' . "$username " . '\'' . "," . '\'' . " $pass_hash" . '\'' . " )";
             $stmt = $conn->exec($sql);
             $conn->commit();
         } catch (Exception $e) {

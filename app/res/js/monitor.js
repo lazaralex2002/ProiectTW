@@ -150,7 +150,7 @@ function callAPI()
             }
         }
     );
-    setTimeout(callAPI,66);
+    setTimeout(callAPI,200);
 }
 
 function codeAddress()

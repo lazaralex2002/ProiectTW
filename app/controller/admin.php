@@ -1,16 +1,10 @@
 <?php
-if(!isset($_SESSION['admin_view']))
-{
+if (!isset($_SESSION['admin_view'])) {
     $_SESSION['admin_view'] = 'dashboard';
-}
-else
-{
-    if (isset($_POST['admin_view']))
-    {
+} else {
+    if (isset($_POST['admin_view'])) {
         $_SESSION['admin_view'] = $_POST['admin_view'];
-    }
-    else
-    {
+    } else {
         $_SESSION['admin_view'] = 'dashboard';
     }
 }
@@ -44,49 +38,55 @@ if (isset($_POST['update_user'])) {
 }
 if (isset($_POST['update_pass'])) {
     require_once 'app/controller/dbConfig.php';
-    $username = trim($_SESSION["uname"], FILTER_SANITIZE_STRING);
-    $password = trim($_POST["pass"], FILTER_SANITIZE_STRING);
+    $ok = 0;
 
-    $password_new   = $_POST['new_pass'];
-    include 'app/model/get_user.php';
+    $username = trim($_SESSION["uname"], ' ');
+    $password = trim($_POST["pass"] . ' ');
 
+    $password_new   = trim(password_hash(trim($_POST['new_pass'], ' '), PASSWORD_DEFAULT), ' ');
+    include 'app/model/get_user_credentials.php';
     if ($stmt = $conn->query($sql)) {
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            if ($row[1] == $password) {
-                try {
-                    $conn->beginTransaction();
-                    include 'app/model/update_pass.php';
-                    $stmt = $conn->exec($sql);
-                    $conn->commit();
-                } catch (Exception $e) {
-                    echo $e->getMessage();
-                    $conn->rollback();
-                    throw $e;
-                }
+            if (password_verify($password, trim($row[1], ' '))) {
+                $ok = 1;
+            }
+        }
+    }
+    if ($ok == 1) {
+        if (password_verify($password, trim($row[1], ' '))) {
+            try {
+                $conn->beginTransaction();
+                include 'app/model/update_pass.php';
+                $stmt = $conn->exec($sql);
+                $conn->commit();
+            } catch (Exception $e) {
+                echo $e->getMessage();
+                $conn->rollback();
+                throw $e;
             }
         }
     }
 }
+
 
 if (isset($_POST['delete_user'])) {
     $ok = 0;
     require_once 'app/controller/dbConfig.php';
     $username = $_SESSION["uname"];
     $password = $_POST["pass"];
-    include 'app/model/get_user.php';
+    include 'app/model/get_user_credentials.php';
 
     if ($stmt = $conn->query($sql)) {
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            if (ltrim($row[5]) == $password) {
+            if (password_verify($password, trim($row[1], ' '))) {
                 $ok = 1;
             }
         }
     }
-    if($ok ==1){
+    if ($ok == 1) {
         try {
             $conn->beginTransaction();
             include 'app/model/del_user.php';
-            echo $sql;
             $stmt = $conn->exec($sql);
             $conn->commit();
         } catch (Exception $e) {
@@ -98,5 +98,4 @@ if (isset($_POST['delete_user'])) {
         session_abort();
         header("Location:login");
     }
-
 }

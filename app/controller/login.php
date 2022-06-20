@@ -5,8 +5,8 @@ $ok = 0;
 $username_err = "";
 if (isset($_POST["login"]))
 {
-    $username = trim($_POST["uname"], FILTER_SANITIZE_STRING);
-    $password = trim($_POST["pass"], FILTER_SANITIZE_STRING);
+    $username = trim($_POST["uname"], ' ');
+    $password = trim($_POST["pass"], ' ');
 
     include 'app/model/get_user_credentials.php';
 
@@ -15,7 +15,7 @@ if (isset($_POST["login"]))
     {
         while ($row = $stmt->fetch(PDO::FETCH_NUM))
         {
-            if (trim($row[1], ' ') == trim($password, ' '))
+            if (password_verify($password, trim($row[1], ' ')))
             {
                 $ok = 1;
             }
@@ -34,7 +34,7 @@ if (isset($_POST["login"]))
                 $_SESSION["email"] = $row[2];
                 $_SESSION["phone"] = $row[3];
                 $_SESSION["uname"] = $row[4];
-                $_SESSION["password"] = $row[5];
+                //$_SESSION["password"] = $row[5];
                 $_SESSION["admin"] = $row[6];
             }
         }
