@@ -10,11 +10,12 @@ if (isset($_POST["login"]))
 
     include 'app/model/get_user_credentials.php';
 
+
     if ($stmt = $conn->query($sql))
     {
         while ($row = $stmt->fetch(PDO::FETCH_NUM))
         {
-            if ($row[1] == $password)
+            if (trim($row[1], ' ') == trim($password, ' '))
             {
                 $ok = 1;
             }

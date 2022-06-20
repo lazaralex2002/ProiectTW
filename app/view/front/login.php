@@ -25,7 +25,7 @@
                     </div>
                     <button class="button mt-3" name="login" type="submit">Log in</button>
                     <?php if ($ok == 0 && isset($_POST['login'])) { ?>
-                        <p class="column-lg-10 font-sans text-red text-sm font-normal">User does not exist or incorrect password</p>
+                        <p class="column-lg-10 font-sans text-red text-sm font-normal">User does not exist or invalid credentials.</p>
                     <?php } ?>
                     <div class="column-lg-10">
                         <p class="font-sans text-white text-sm font-normal">If you don't have an account, click here to create one</p>
