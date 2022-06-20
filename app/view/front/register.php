@@ -1,4 +1,4 @@
-<div class="bg-primary flex wrap pb-5">
+<div class="bg-secondary flex wrap pb-5">
     <div class="column-md-4 hide-md">
         <img class="img cover" src="app/res/img/markus-spiske-OO89_95aUC0-unsplash.jpg">
     </div>
