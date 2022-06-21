@@ -1,6 +1,8 @@
 //leave up
 var colors = ["#cb3c3c","#1c80e7",
-    "#9dff24" , "#4fb095" , "#a13fe3"];
+    "#9dff24" , "#4fb095" , "#a13fe3",
+    "#fa72c0" , "#ff7007" , "#487706",
+    "#480146" , "#3c6258" , "#2a2dda"];
 let positionArray = [];
 var messages = document.getElementById('messages');
 //done
